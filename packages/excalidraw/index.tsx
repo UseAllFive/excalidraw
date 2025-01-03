@@ -52,6 +52,8 @@ const ExcalidrawBase = (props: ExcalidrawProps) => {
     renderEmbeddable,
     aiEnabled,
     showDeprecatedFonts,
+    activeTool,
+    onActiveToolChange,
   } = props;
 
   const canvasActions = props.UIOptions?.canvasActions;
@@ -141,6 +143,8 @@ const ExcalidrawBase = (props: ExcalidrawProps) => {
           renderEmbeddable={renderEmbeddable}
           aiEnabled={aiEnabled !== false}
           showDeprecatedFonts={showDeprecatedFonts}
+          activeTool={activeTool}
+          onActiveToolChange={onActiveToolChange}
         >
           {children}
         </App>

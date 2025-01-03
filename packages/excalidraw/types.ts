@@ -41,6 +41,7 @@ import type { ContextMenuItems } from "./components/ContextMenu";
 import type { SnapLine } from "./snapping";
 import type { Merge, MaybePromise, ValueOf, MakeBrand } from "./utility-types";
 import type { StoreActionType } from "./store";
+import type { TOOL_TYPE } from "./constants";
 
 export type SocketId = string & { _brand: "SocketId" };
 
@@ -565,6 +566,10 @@ export interface ExcalidrawProps {
   ) => JSX.Element | null;
   aiEnabled?: boolean;
   showDeprecatedFonts?: boolean;
+  /** Current active tool. If not provided, will use the default tool */
+  activeTool?: ValueOf<typeof TOOL_TYPE>;
+  /** Callback to be triggered when the active tool changes */
+  onActiveToolChange?: (tool: ValueOf<typeof TOOL_TYPE>) => void;
 }
 
 export type SceneData = {
